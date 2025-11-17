@@ -21,23 +21,23 @@ for (var i=0; i < pacientes.length; i++) {
     var altura = tdAltura.textContent;
     var tdImc = paciente.querySelector(".info-imc");
 
-    var pesoEhValido = true;
-    var alturaEhValida = true;
+    var pesoEhValido = validaPeso(peso);
+    var alturaEhValida = validaAltura(altura);
     //validar os dados de peso
-    if (peso <= 0 ||  peso >= 1000) {
+    if (!pesoEhvalido) {
         console.log("Peso inválido");
         pesoEhValido = false;
         tdImc.textContent = "Peso inválido";
     }
     //validar a altura
-    if (altura <=0 || altura > 3.00){
+    if (!alturaEh valida) {
         console.log("Altura inválida");
         alturaEhValida = false;
         tdImc.textContent = "Altura inválida";
     }
     //validar peso e altura
     if (alturaEhValida && pesoEhValido) {
-        var imc = peso / (altura*altura);
+        var imc = calculaIMC( peso,altura)
         tdImc.textContent = imc.toFixed(2);
     }
 
