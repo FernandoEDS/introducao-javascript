@@ -20,8 +20,8 @@ function obtemPacienteDoFormulario(form){
         peso:form.peso.value,
         altura:form.altura.value,
         gordura:form.gordura.value,
-        IMC: calculaIMC(form.peso.value, form.altura.value);
-    }
+        IMC: calculaIMC(form.peso.value, form.altura.value)
+    };
 
     return paciente;
    
