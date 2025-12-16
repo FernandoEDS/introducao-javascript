@@ -12,7 +12,7 @@ botaoAdicionar.addEventListener("click", function(event){
     var tabela = document.querySelector("#tabela-pacientes");
 
     tabela.appendChild(pacienteTr);
-
+    
 
 
     form.reset();
@@ -20,26 +20,20 @@ botaoAdicionar.addEventListener("click", function(event){
 });
 
 // Dividir em tres funções para trabalhar com tarefas menores
-
-function obtemPacienteDoFormulario(form) {
-    
+function obtemPacienteDoFormulario(form){
     var paciente = {
-
         nome: form.nome.value,
         peso: form.peso.value,
         altura: form.altura.value,
         gordura: form.gordura.value,
         imc: calculaImc(form.peso.value, form.altura.value)
     }
-
     return paciente;
 }
 
 function montaTr(paciente) {
-
     var pacienteTr = document.createElement("tr");
     pacienteTr.classList.add("paciente");
-
 
     pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
     pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
@@ -48,6 +42,7 @@ function montaTr(paciente) {
     pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
 
     return pacienteTr;
+
 }
 
 function montaTd(dado, classe) {
@@ -56,6 +51,4 @@ function montaTd(dado, classe) {
     td.textContent = dado;
 
     return td;
-
-
 }
